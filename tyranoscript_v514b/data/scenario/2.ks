@@ -36,9 +36,9 @@ Chapter 2　：　再会[p]
 #&f.player_name
 今日は何をしようか[l]
 
-;分岐1、サークル、学校、家
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="サークルを見にいく"  target="*サークル"  ]
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="とりあえず学校へ向かう"  target="*大学"  ]
+;分岐1、学校、家
+;[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="サークルを見にいく"  target="*大学"  ]
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="学校へ向かう"  target="*大学"  ]
 [glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="350"  text="家にいる"  target="*家" ]
 [s]
 
@@ -48,62 +48,65 @@ Chapter 2　：　再会[p]
 #
 [bg storage="キャンパス.jpg" time="2000" method="fadeInLeftBig"]
 
-#&f.player_name
-今日はあちこちでサークルの勧誘をしているようだ。[r]
-歩いていると何枚かの勧誘のビラをもらった。[p]
+;#&f.player_name
+;今日はあちこちでサークルの勧誘をしているようだ。[r]
+;歩いていると何枚かの勧誘のビラをもらった。[p]
+
 どのサークルを見に行こうかな？[l]
 
-;分岐2-音楽、スポーツ、宗教
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="音楽系サークル"  target="*音楽"  ]
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="スポーツ系サークル"  target="*スポーツ"  ]
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="350"  text="宗教系サークル"  target="*宗教" ]
+;分岐2-スポーツ、宗教、帰る
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="スポーツ系サークル"  target="*スポーツ"  ]
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="宗教系サークル"  target="*宗教"  ]
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="350"  text="帰る"  target="*帰る" ]
 [s]
-
-;分岐2
-*音楽
-[cm]
-[eval exp="f.サークル = '音楽'"]
-
-@jump target="*分岐2"
-
-;分岐2
-*スポーツ
-[cm]
-[eval exp="f.サークル = 'スポーツ'"]
-@jump target="*分岐2"
-
-;分岐2
-*宗教
-[cm]
-[eval exp="f.サークル = '宗教'"]
-;講義室移動
-[bg storage=講義室.png time=1000]
-[chara_show name="yamato" face="happy" ]
-#サークルの先輩
-あなたは今幸せですか？[p]
-
-;前どうセリフ（シルエット）
-#???
-冷静に考えて誰に需要があるねん！！
-
-;前どう登場
-
-#自分
-！！！！！！！
-
-
-
-@jump target="*分岐2"
-
-
-;分岐2＞ジャンプ
-*分岐2
-
 
 
 ;分岐1
 *大学
 [cm]
+#
+[bg storage="キャンパス.jpg" time="2000" method="fadeInLeftBig"]
+
+#&f.player_name
+学校に来たのはいいけど、どうしよっかな〜[p]
+とりあえず図書館にでも行こっと[p]
+
+#???
+おう！[p]
+
+#&f.player_name
+?[p]
+
+#見覚えのある4545Cの男
+久しぶりだな！[emb exp=f.player_name]ちゃん[l][r]
+今からサークル見に行くんだけど俺と行こうぜ！[p]
+
+#&f.player_name
+えーと[p]
+誰でしたっけ？[p]
+
+#見覚えのある4545Cの男
+なに言ってんだyo！前Doだよ[l][r]
+#前Do
+覚えてない？合格発表の日のこと[p]
+
+#&f.player_name
+あー、あの時の[l][r]
+でも私今から[p]
+
+#前Do
+さあ行こうぜ！[p]
+
+#&f.player_name
+え！？ちょっと待って[p]
+ちょっとーーー[p]
+
+#
+あなたは前Doと一緒にサークルを見に行くことになった[p]
+
+@jump target="*サークル"
+
+
 
 ;分岐1
 *家
@@ -171,6 +174,207 @@ Chapter 2　：　再会[p]
 誰もいない...?[p]
 ;背景の設定
 [bg storage=前Doスコープ.png time=3000]
-きゃあああ！？[p]
+きゃぁぁぁぁぁぁ！！！！？？？？[l][r]
+びっくりした！[p]
+
+#見覚えのある4545Cの男
+おーい[p]
+
+#&f.player_name
+（この人なんで私の家知ってるの？？）[r]
+誰ですか？？[p]
+
+#見覚えのある4545Cの男
+なに言ってんだyo！前Doだよ[l][r]
+#前Do
+覚えてない？合格発表の日のこと[p]
+
+#&f.player_name
+あー、あの時の[p]
+どうして私の家知ってるんですか？[p]
+
+#前Do
+「どうしてって、[l][r]
+[delay speed=150 ][font bold="true" color="0xF01010"]あの後一緒に帰ったじゃん。[resetfont][resetdelay]」[p]
+
+#&f.player_name
+えっ...[p]
+（あの日は一人で帰ったはず...[l][r]
+もしかしてこの人...）[p]
+
+;前Doドアガチャをする
+#前Do
+[playbgm storage="ドアノブガチャガチャ.mp3"]
+これからサークル見に行くんだけど一緒に行かない？（ガチャガチャ）[p]
+
+#&f.player_name
+（どうしよう[l][r]
+正直行きたくないけど）[p]
+
+わ...わかった、行くから[l][r]
+ドアガチャガチャするのやめて[p]
+[stopbgm]
+
+#
+あなたは前Doと一緒にサークルを見に行くことにした[p]
+
+@jump target="*サークル"
+
+
+;分岐2
+*スポーツ
+[cm]
+[eval exp="f.サークル = 'スポーツ'"]
+
+#先輩
+力こそパワー！！！[p]
+
+#&f.player_name
+（何このやばい人）[p]
+
+#前Do
+この人やばくね[p]
+
+#&f.player_name
+（お前が言うな）[l][r]
+そ、そうだね[p]
+
+#先輩
+もしよかったら、こちら私の連絡先です[l][r]
+興味があれば連絡ください[p]
+
+#&f.player_name
+ありがとうございます[p]
+
+#前Do
+こいつスポーツばっかやってそうで将来の危機感とかなさそうだよな[p]
+
+#&f.player_name
+危機感？[p]
+
+#前Do
+[delay speed=30]
+スポーツ経験ばっかりの男、部活しかやったことない男、オレ、ガチで危機感持った方がいいと思う。ガチで危機感持った方がいい。で、それこそがァ、お前がァ、どう足掻いてもバカな理由だと思う。
+[resetdelay][p]
+
+#&f.player_name
+えーと...[p]
+
+#先輩
+ボソボソ喋ってんなよ[l][r]
+だからモテないんだよ[p]
+
+#前Do
+[delay speed=150 ][font bold="true" color="0xF01010"]
+確かに俺の顔面崩壊してるけどさぁ〜
+[resetfont][resetdelay][p]
+
+#&f.player_name
+と、とりあえず！[l][r]
+興味があれば連絡しますね！[p]
+
+#前Do
+ついでに、[l][r]
+俺に興味があれば俺に連絡してもいいぜ[p]
+
+#&f.player_name
+う、うん[l][r]
+考えときます...[p]
+
+@jump target="*分岐2"
+
+;分岐2
+*宗教
+[cm]
+[eval exp="f.サークル = '宗教'"]
+;講義室移動
+[bg storage=講義室.png time=1000]
+[chara_show name="yamato" face="happy" ]
+#先輩
+あなたは神を信じますか？[p]
+
+#&f.player_name
+（何このやばい人）[p]
+
+#前Do
+この人やばくね[p]
+
+#&f.player_name
+（お前が言うな）[l][r]
+そ、そうだね[p]
+
+#先輩
+もしよかったら、こちら私の連絡先です[l][r]
+興味があれば連絡ください[p]
+
+#&f.player_name
+ありがとうございます[p]
+
+#前Do
+こいつティッシュ配り型やんけ[p]
+
+#&f.player_name
+ティッシュ配り型？[p]
+
+#前Do
+[delay speed=30]
+宗教勧誘ってさティッシュ配り型と親密型と集団型の三種類があるんだけど、こいつはそのティッシュ配り型やん
+[resetdelay][p]
+
+#&f.player_name
+そ、そうなんだね...[p]
+
+#先輩
+宗教勧誘を分類してるのやばいですね[l][r]
+神を侮辱するとモテないですよ[p]
+
+#前Do
+[delay speed=150 ][font bold="true" color="0xF01010"]
+確かに俺の顔面崩壊してるけどさぁ〜
+[resetfont][resetdelay][p]
+
+#&f.player_name
+と、とりあえず！[l][r]
+興味があれば連絡しますね！[p]
+
+#前Do
+ついでに、[l][r]
+俺に興味があれば俺に連絡してもいいぜ[p]
+
+#&f.player_name
+う、うん[l][r]
+考えときます...[l][r]
+（ティッシュ配りすんな）[p]
+
+@jump target="*分岐2"
+
+*帰る
+#前Do？
+チョ待てよ[p]
+
+#
+どのサークルを見に行こうかな？[l]
+
+;分岐2-スポーツ、宗教、帰る
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="スポーツ系サークル"  target="*スポーツ"  ]
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="宗教系サークル"  target="*宗教"  ]
+[s]
+
+;分岐2＞ジャンプ
+*分岐2
+;黒の背景
+[bg storage=black.png time=1000]
+;メッセージウィンドウの設定
+[position layer="message0" left=100 top=100 width=1060 height=500 page=fore visible=true]
+;メッセージ出力位置の設定
+[position layer=message0 page=fore margint="50" marginl="80" marginr="80" marginb="100"]
+癖の強い人と知り合いになってしまった...[l][r]
+私の大学生活は一体どのようになってしまうのだろうか[p]
+
+
+Chapter 2　：　再会　クリア[p]
+[cm]
+;Chapter 3へ
+@jump storage="3.ks"
 
 
