@@ -26,7 +26,7 @@ Chapter 3　：　知り合い[p]
 [fadeoutbgm]
 ;カラオケに移動
 [bg storage="カラオケ.png" time=3000 method="fadeInLeftBig"]
-[playbgm storage="クラブ.mp3" volume=10]
+[playbgm storage="クラブ.mp3" volume=3]
 
 ;メッセージウィンドウの設定
 [position layer="message0" left=160 top=500 width=1000 height=200 page=fore visible=true]
@@ -64,6 +64,7 @@ Doくん楽しそうだな〜[p]
 [playse storage="動く音.mp3"]
 [chara_mod name="Do" face="座る"]
 #前Do
+いえいえ[l][r]
 せっかくだから[emb exp=f.player_name]ちゃんも歌いなよ[p]
 
 #
@@ -79,6 +80,7 @@ Doくん楽しそうだな〜[p]
 *アニソン
 [eval exp="sf.曲 = 'アニソン'"]
 [fadeoutbgm]
+[wait time=1000]
 [playse storage="動く音.mp3"]
 [chara_hide_all]
 #&f.player_name
@@ -89,6 +91,7 @@ Doくん楽しそうだな〜[p]
 *洋楽
 [eval exp="sf.曲 = '洋楽'"]
 [fadeoutbgm]
+[wait time=1000]
 [playse storage="動く音.mp3"]
 [chara_hide_all]
 #&f.player_name
@@ -99,6 +102,7 @@ Doくん楽しそうだな〜[p]
 *演歌
 [eval exp="sf.曲 = '演歌'"]
 [fadeoutbgm]
+[wait time=1000]
 [playse storage="動く音.mp3"]
 [chara_hide_all]
 #&f.player_name
@@ -119,6 +123,7 @@ Doくん楽しそうだな〜[p]
 [chara_mod name="Do" face="赤全身"]
 ;音声付きセリフ
 [playse storage="Do僕たち気が合うね.m4a"]
+[wait time=500]
 [delay speed=150 ][font bold="true" color="0xF01010"]僕たち気が合うね[resetfont][resetdelay][p]
 
 #&f.player_name
@@ -144,7 +149,8 @@ Doくんこの[emb exp=sf.曲]知ってるんだ！[p]
 
 *行かない
 #前Do
-一緒に行って欲しいなぁ[p]
+[playse storage="Do一緒に行って欲しいなぁ.m4a" volume=200]
+[delay speed=150]一緒に行って欲しいなぁ[p][resetdelay]
 ;選択肢が行くのみになる
 [glink  color="blue"  storage="3.ks"  size="28"  x="360"  width="500"  y="150"  text="行く"  target="*行く"  ]
 [s]

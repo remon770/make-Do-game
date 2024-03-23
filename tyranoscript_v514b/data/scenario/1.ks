@@ -102,8 +102,8 @@ Fu Fu Fu　あややとぅーや[p]
 
 [chara_mod name="Do" face="斜め通常" ]
 #？？？
+[playse storage="Do拾ってくれたら嬉しいなぁ.m4a"]
 [delay speed=150 ][font bold="true" color="0xF01010"]君が拾ってくれたら嬉しいな[resetfont][resetdelay][p]
-
 [glink  color="blue"  storage="1.ks"  size="28"  x="360"  width="500"  y="250"  text="拾う"  target="*pick"  ]
 [s]
 
@@ -184,6 +184,7 @@ Fu Fu Fu　あややとぅーや[p]
 
 #前Do
 [chara_mod name="Do" face="下笑い"]
+[playse storage="Doよろしく.m4a"]
 [font bold="true" color="0xF01010"][emb exp=f.player_name]ちゃんか、よろしく[resetfont][p]
 
 

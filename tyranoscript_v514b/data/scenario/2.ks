@@ -103,7 +103,6 @@ Chapter 2　：　再会[p]
 [cm]
 
 #&f.player_name
-[p]
 今日は家でゆっくりしよう．[p]
 そういえば見たかったアニメがあったな[p]
 ・・・
@@ -115,7 +114,7 @@ Chapter 2　：　再会[p]
 ;前どう家に訪問
 [cm]
 [fadeoutbgm]
-#???
+#
 ;訪問チャイム
 [playse storage="ドアチャイム.mp3" volume=30]
 --チャイムが鳴る音--[p]
@@ -138,7 +137,7 @@ Chapter 2　：　再会[p]
 ;チャイムに出ない
 *出ない
 [cm]
-#???
+#
 [playse storage="ドアチャイム.mp3" volume=30]
 [wait time=1000] 
 [playse storage="ドアチャイム.mp3" volume=30]
@@ -181,6 +180,8 @@ Chapter 2　：　再会[p]
 
 #見覚えのある4545Cの男
 なに言ってんだyo！前Doだよ[l][r]
+;キャラクターの明暗設定
+[chara_config brightness=40 talk_focus=brightness]
 #前Do
 覚えてない？合格発表の日のこと[p]
 
@@ -189,8 +190,9 @@ Chapter 2　：　再会[p]
 どうして私の家知ってるんですか？[p]
 
 #前Do
-「どうしてって、[l][r]
-[delay speed=150 ][font bold="true" color="0xF01010"]あの後一緒に帰ったじゃん。[resetfont][resetdelay]」[p]
+どうしてって、[l][r]
+[playse storage="Doあの後一緒に帰ったじゃん.m4a"]
+[delay speed=150 ][font bold="true" color="0xF01010"]あの後一緒に帰ったじゃん。[resetfont][resetdelay][p]
 
 #&f.player_name
 えっ...[p]

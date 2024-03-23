@@ -3,8 +3,6 @@
 [eval exp="f.gakubu = '工学部'"]
 [eval exp="f.player_name = 'たいき'"]
 
-;キャラクターの明暗設定
-[chara_config brightness=40 talk_focus=brightness]
 
 ;キャラクターDoの設定
 [chara_new name="Do" storage="chara/Do/Do通常.png" jname="前Do" ]
@@ -30,6 +28,14 @@
 [chara_face name="Do" face="歌う" storage="chara/Do/Doマイク歌う正面.png"]
 [chara_face name="Do" face="座る" storage="chara/Do/Doマイク座る.png"]
 [chara_face name="Do" face="赤全身" storage="chara/Do/Do赤服全身.png"]
+[chara_face name="Do" face="青真剣" storage="chara/Do/Do青真剣.png"]
+[chara_face name="Do" face="青通常" storage="chara/Do/Do青通常.png"]
+[chara_face name="Do" face="青煽り" storage="chara/Do/Do青煽り.png"]
+[chara_face name="Do" face="G" storage="chara/Do/DoG.png"]
+[chara_face name="Do" face="フンコロガシ" storage="chara/Do/Doフンコロガシ.png"]
+[chara_face name="Do" face="食べる" storage="chara/Do/Do食べる.png"]
+[chara_face name="Do" face="そば" storage="chara/Do/DoそばとDo.png"]
+[chara_face name="Do" face="そば食" storage="chara/Do/Doそば食.png"]
 ;[chara_face name="Do" face="" storage="chara/Do/Do.png"]
 
 ;先輩1の設定
