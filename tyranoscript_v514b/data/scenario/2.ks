@@ -346,6 +346,8 @@ Chapter 2　：　再会[p]
 考えときます...[l][r]
 （ティッシュ配りすんな）[p]
 
+[chara_hide name = "yamato"]
+
 @jump target="*分岐2"
 
 *帰る
@@ -368,6 +370,7 @@ Chapter 2　：　再会[p]
 [position layer="message0" left=100 top=100 width=1060 height=500 page=fore visible=true]
 ;メッセージ出力位置の設定
 [position layer=message0 page=fore margint="50" marginl="80" marginr="80" marginb="100"]
+#
 癖の強い人と知り合いになってしまった...[l][r]
 私の大学生活は一体どのようになってしまうのだろうか[p]
 
