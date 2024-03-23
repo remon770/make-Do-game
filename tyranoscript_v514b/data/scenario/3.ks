@@ -20,13 +20,8 @@ Chapter 3　：　知り合い[p]
 @layopt layer=message0 visible=true
 
 ;導入
-それからDoくんと先輩とやりとりを行いみんなでカラオケに行くことになった[p]
-
-[playse storage="移動音.m4a"]
-[fadeoutbgm]
-;カラオケに移動
-[bg storage="カラオケ.png" time=3000 method="fadeInLeftBig"]
-[playbgm storage="クラブ.mp3" volume=3]
+それからDoくんや先輩達とやりとりを行っていくうち、[r]
+みんなでカラオケに行くことになった[p]
 
 ;メッセージウィンドウの設定
 [position layer="message0" left=160 top=500 width=1000 height=200 page=fore visible=true]
@@ -36,6 +31,26 @@ Chapter 3　：　知り合い[p]
 [ptext name="chara_name_area" layer="message0" color="white" size=28 bold=true x=180 y=510]
 ;上記で定義した領域がキャラクターの名前表示であることを宣言（これがないと#の部分でエラーになります）
 [chara_config ptext="chara_name_area"]
+
+#&f.player_name
+最先色々不安だったけど[r]
+なんだかんだ大学生っぽくなってきた気がするな〜[p]
+Doくんとはまだ距離感がわからないけど...[p]
+
+#
+[wait time=1000]
+
+#&f.player_name
+あ、いっけない[l][r]
+そろそろ出ないと[p]
+
+[playse storage="移動音.m4a"]
+[fadeoutbgm]
+;カラオケに移動
+[bg storage="カラオケ.png" time=3000 method="fadeInLeftBig"]
+[playbgm storage="クラブ.mp3" volume=3]
+
+
 
 [chara_show name="senpai"]
 #ムキムキ先輩
@@ -150,7 +165,7 @@ Doくんこの[emb exp=sf.曲]知ってるんだ！[p]
 *行かない
 #前Do
 [playse storage="Do一緒に行って欲しいなぁ.m4a" volume=200]
-[delay speed=150]一緒に行って欲しいなぁ[p][resetdelay]
+[delay speed=150][font bold="true" color="0xF01010"]一緒に行って欲しいなぁ[p][resetfont][resetdelay]
 ;選択肢が行くのみになる
 [glink  color="blue"  storage="3.ks"  size="28"  x="360"  width="500"  y="150"  text="行く"  target="*行く"  ]
 [s]
