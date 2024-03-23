@@ -18,6 +18,7 @@ Chapter 2　：　再会[p]
 ;メッセージウィンドウの表示
 @layopt layer=message0 visible=true
 
+[playbgm storage="部屋BGM.mp3" volume=10]
 ;導入
 合格発表以来、あの4545Cの男と会うことはなかった。[r]
 大学生活が始まり慣れないことが多く大変だが充実した日々を過ごしていた。[l][r]
@@ -37,33 +38,17 @@ Chapter 2　：　再会[p]
 今日は何をしようか[l]
 
 ;分岐1、学校、家
-;[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="サークルを見にいく"  target="*大学"  ]
 [glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="学校へ向かう"  target="*大学"  ]
 [glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="350"  text="家にいる"  target="*家" ]
-[s]
-
-;分岐1
-*サークル
-[cm]
-#
-[bg storage="キャンパス.jpg" time="2000" method="fadeInLeftBig"]
-
-;#&f.player_name
-;今日はあちこちでサークルの勧誘をしているようだ。[r]
-;歩いていると何枚かの勧誘のビラをもらった。[p]
-
-どのサークルを見に行こうかな？[l]
-
-;分岐2-スポーツ、宗教、帰る
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="スポーツ系サークル"  target="*スポーツ"  ]
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="宗教系サークル"  target="*宗教"  ]
-[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="350"  text="帰る"  target="*帰る" ]
 [s]
 
 
 ;分岐1
 *大学
 [cm]
+[playse storage="移動音.m4a"]
+[fadeoutbgm time=500]
+[playbgm storage="ポップBGM.mp3" volume=10]
 #
 [bg storage="キャンパス.jpg" time="2000" method="fadeInLeftBig"]
 
@@ -71,12 +56,14 @@ Chapter 2　：　再会[p]
 学校に来たのはいいけど、どうしよっかな〜[p]
 とりあえず図書館にでも行こっと[p]
 
+[chara_show name="Do" face="シルエット通常"] 
 #???
 おう！[p]
 
 #&f.player_name
 ?[p]
 
+[chara_mod name="Do" face="default"]
 #見覚えのある4545Cの男
 久しぶりだな！[emb exp=f.player_name]ちゃん[l][r]
 今からサークル見に行くんだけど俺と行こうぜ！[p]
@@ -85,8 +72,10 @@ Chapter 2　：　再会[p]
 えーと[p]
 誰でしたっけ？[p]
 
+[chara_mod name="Do" face="下笑い"] 
 #見覚えのある4545Cの男
 なに言ってんだyo！前Doだよ[l][r]
+[chara_mod name="Do"] 
 #前Do
 覚えてない？合格発表の日のこと[p]
 
@@ -94,6 +83,8 @@ Chapter 2　：　再会[p]
 あー、あの時の[l][r]
 でも私今から[p]
 
+[chara_mod name="Do" face="走る"] 
+[playse storage="移動音.m4a"]
 #前Do
 さあ行こうぜ！[p]
 
@@ -105,7 +96,6 @@ Chapter 2　：　再会[p]
 あなたは前Doと一緒にサークルを見に行くことになった[p]
 
 @jump target="*サークル"
-
 
 
 ;分岐1
@@ -124,9 +114,10 @@ Chapter 2　：　再会[p]
 [bg storage=家.png time=3000]
 ;前どう家に訪問
 [cm]
+[fadeoutbgm]
 #???
 ;訪問チャイム
-[playse storage="ドアチャイム.mp3"]
+[playse storage="ドアチャイム.mp3" volume=30]
 --チャイムが鳴る音--[p]
 
 #&f.player_name
@@ -140,6 +131,7 @@ Chapter 2　：　再会[p]
 *出る
 #&f.player_name
 はーい[p]
+[playse storage="家の歩行音.m4a"]
 
 @jump target="*合流ポイント"
 
@@ -147,17 +139,18 @@ Chapter 2　：　再会[p]
 *出ない
 [cm]
 #???
-[playse storage="ドアチャイム.mp3"]
+[playse storage="ドアチャイム.mp3" volume=30]
 [wait time=1000] 
-[playse storage="ドアチャイム.mp3"]
+[playse storage="ドアチャイム.mp3" volume=30]
 [wait time=1000] 
-[playse storage="ドアチャイム.mp3"]
+[playse storage="ドアチャイム.mp3" volume=30]
 
 
 #&f.player_name
 ！？！？！？[p]
 え...[r]
 だ...だれ？[p]
+[playse storage="家の歩行音.m4a"]
 
 *合流ポイント
 ;背景の設定
@@ -167,6 +160,7 @@ Chapter 2　：　再会[p]
 [s]
 *ドアスコープ
 [cm]
+[playse storage="動く音.mp3"]
 ;背景の設定
 [bg storage=スコープ.png time=3000]
 #&f.player_name
@@ -174,6 +168,7 @@ Chapter 2　：　再会[p]
 誰もいない...?[p]
 ;背景の設定
 [bg storage=前Doスコープ.png time=3000]
+[quake time=300]
 きゃぁぁぁぁぁぁ！！！！？？？？[l][r]
 びっくりした！[p]
 
@@ -218,20 +213,41 @@ Chapter 2　：　再会[p]
 #
 あなたは前Doと一緒にサークルを見に行くことにした[p]
 
+[playbgm storage="ポップBGM.mp3" volume=10]
 @jump target="*サークル"
+
+;分岐1
+*サークル
+[cm]
+#
+[bg storage="キャンパス.jpg" time="2000" method="fadeInLeftBig"]
+[chara_show name="Do" face="走る"]
+どのサークルを見に行こうかな？[l]
+
+;分岐2-スポーツ、宗教、帰る
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="150"  text="スポーツ系サークル"  target="*スポーツ"  ]
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="250"  text="宗教系サークル"  target="*宗教"  ]
+[glink  color="blue"  storage="2.ks"  size="28"  x="360"  width="500"  y="350"  text="帰る"  target="*帰る" ]
+[s]
 
 
 ;分岐2
 *スポーツ
 [cm]
-[eval exp="f.サークル = 'スポーツ'"]
+[playse storage="移動音.m4a"]
+[bg storage="サッカー場.jpg" time="2000" method="fadeInLeftBig"]
 
-#先輩
-力こそパワー！！！[p]
+;前堂消える
+[chara_hide name="Do"]
+
+[chara_show name="senpai"]
+#ムキムキ先輩
+力こそpower[p]
 
 #&f.player_name
 （何このやばい人）[p]
 
+[chara_show name="Do" face="斜め笑い"]
 #前Do
 この人やばくね[p]
 
@@ -239,7 +255,9 @@ Chapter 2　：　再会[p]
 （お前が言うな）[l][r]
 そ、そうだね[p]
 
-#先輩
+[chara_mod name="senpai" face="斜め"]
+[playse storage="ピ.mp3"]
+#ムキムキ先輩
 もしよかったら、こちら私の連絡先です[l][r]
 興味があれば連絡ください[p]
 
@@ -252,6 +270,7 @@ Chapter 2　：　再会[p]
 #&f.player_name
 危機感？[p]
 
+[chara_mod name="Do" face="default"]
 #前Do
 [delay speed=30]
 スポーツ経験ばっかりの男、部活しかやったことない男、オレ、ガチで危機感持った方がいいと思う。ガチで危機感持った方がいい。で、それこそがァ、お前がァ、どう足掻いてもバカな理由だと思う。
@@ -260,11 +279,15 @@ Chapter 2　：　再会[p]
 #&f.player_name
 えーと...[p]
 
-#先輩
+[chara_mod name="senpai" face="default"]
+#ムキムキ先輩
 ボソボソ喋ってんなよ[l][r]
 だからモテないんだよ[p]
 
+[chara_mod name="Do" face="顔面崩壊"]
 #前Do
+;音声付きセリフ
+[playse storage="Do確かに俺の顔面崩壊してるけどさぁ.m4a"]
 [delay speed=150 ][font bold="true" color="0xF01010"]
 確かに俺の顔面崩壊してるけどさぁ〜
 [resetfont][resetdelay][p]
@@ -273,6 +296,8 @@ Chapter 2　：　再会[p]
 と、とりあえず！[l][r]
 興味があれば連絡しますね！[p]
 
+[chara_mod name="Do" face="スマホ"]
+[playse storage="ピ.mp3"]
 #前Do
 ついでに、[l][r]
 俺に興味があれば俺に連絡してもいいぜ[p]
@@ -281,21 +306,30 @@ Chapter 2　：　再会[p]
 う、うん[l][r]
 考えときます...[p]
 
+[chara_hide name = "senpai"]
+
 @jump target="*分岐2"
 
-;分岐2
+;分岐
 *宗教
 [cm]
-[eval exp="f.サークル = '宗教'"]
+
+[playse storage="移動音.m4a"]
 ;講義室移動
 [bg storage=講義室.png time=1000]
-[chara_show name="yamato" face="happy" ]
-#先輩
+
+;Do消える
+[chara_hide name="Do"]
+
+[chara_show name="senpai2"]
+#うるさい先輩
 あなたは神を信じますか？[p]
 
 #&f.player_name
 （何このやばい人）[p]
 
+[chara_mod name="senpai2" face="五本指"]
+[chara_show name="Do" face="斜め笑い"]
 #前Do
 この人やばくね[p]
 
@@ -303,7 +337,9 @@ Chapter 2　：　再会[p]
 （お前が言うな）[l][r]
 そ、そうだね[p]
 
-#先輩
+[chara_mod name="senpai2" face="三本指"]
+[playse storage="ピ.mp3"]
+#うるさい先輩
 もしよかったら、こちら私の連絡先です[l][r]
 興味があれば連絡ください[p]
 
@@ -316,6 +352,7 @@ Chapter 2　：　再会[p]
 #&f.player_name
 ティッシュ配り型？[p]
 
+[chara_mod name="Do" face="default"]
 #前Do
 [delay speed=30]
 宗教勧誘ってさティッシュ配り型と親密型と集団型の三種類があるんだけど、こいつはそのティッシュ配り型やん
@@ -324,11 +361,16 @@ Chapter 2　：　再会[p]
 #&f.player_name
 そ、そうなんだね...[p]
 
-#先輩
+;[chara_hide name="senpai2"]
+[chara_show name="senpai2" face="default"]
+
+#うるさい先輩
 宗教勧誘を分類してるのやばいですね[l][r]
 神を侮辱するとモテないですよ[p]
 
+[chara_mod name="Do" face="顔面崩壊"]
 #前Do
+[playse storage="Do確かに俺の顔面崩壊してるけどさぁ.m4a"]
 [delay speed=150 ][font bold="true" color="0xF01010"]
 確かに俺の顔面崩壊してるけどさぁ〜
 [resetfont][resetdelay][p]
@@ -337,6 +379,8 @@ Chapter 2　：　再会[p]
 と、とりあえず！[l][r]
 興味があれば連絡しますね！[p]
 
+[chara_mod name="Do" face="スマホ"]
+[playse storage="ピ.mp3"]
 #前Do
 ついでに、[l][r]
 俺に興味があれば俺に連絡してもいいぜ[p]
@@ -346,7 +390,7 @@ Chapter 2　：　再会[p]
 考えときます...[l][r]
 （ティッシュ配りすんな）[p]
 
-[chara_hide name = "yamato"]
+[chara_hide name = "senpai2"]
 
 @jump target="*分岐2"
 
@@ -364,18 +408,23 @@ Chapter 2　：　再会[p]
 
 ;分岐2＞ジャンプ
 *分岐2
+#
 ;黒の背景
 [bg storage=black.png time=1000]
 ;メッセージウィンドウの設定
 [position layer="message0" left=100 top=100 width=1060 height=500 page=fore visible=true]
 ;メッセージ出力位置の設定
 [position layer=message0 page=fore margint="50" marginl="80" marginr="80" marginb="100"]
-#
+[chara_mod name="Do" face="ねころび"]
+
+
 癖の強い人と知り合いになってしまった...[l][r]
 私の大学生活は一体どのようになってしまうのだろうか[p]
 
+[chara_hide name="Do"]
 
 Chapter 2　：　再会　クリア[p]
+[fadeoutbgm]
 [cm]
 ;Chapter 3へ
 @jump storage="3.ks"

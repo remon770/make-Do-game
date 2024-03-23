@@ -59,26 +59,29 @@ Chapter 1　：　未知との出会い[p]
 *normal
 [cm]
 #
+[playse storage="移動音.m4a"]
 ;場面移動-暗転
 [bg storage="black.png" time="500"]
 
+[playbgm storage="人混み.mp3" volume=10]
 ;合格発表会場
 [bg storage="合格発表.png" time="1500"]
 #自分
 人がいっぱいだ！[p]
 
+[playse storage="衝突音.mp3"]
 ;誰かとぶつかる演出
 [quake count=1 time=100 hmax=20]
 
-#???
+#？？？
 「痛？」[p]
 [chara_show name="Do" face="斜め通常" ]
 
 #自分
-「ごめんなさい。前を見てませんでした。」[p]
+ごめんなさい。前を見てませんでした[p]
 
-#???
-「・・・」[p]
+#？？？
+・・・[p]
 
 ん?[r]
 (何かが落ちていることに気づく)[l]
@@ -90,7 +93,7 @@ Chapter 1　：　未知との出会い[p]
 [cm]
 ;前Doに怒られる　セリフ：Fu Fu Fu　あややとぅーや
 
-#???
+#？？？
 [chara_mod name="Do" face="叫ぶ"]
 Fu Fu Fu　あややとぅーや[p]
 
@@ -98,7 +101,7 @@ Fu Fu Fu　あややとぅーや[p]
 ！！！！！！！[p]
 
 [chara_mod name="Do" face="斜め通常" ]
-#???
+#？？？
 [delay speed=150 ][font bold="true" color="0xF01010"]君が拾ってくれたら嬉しいな[resetfont][resetdelay][p]
 
 [glink  color="blue"  storage="1.ks"  size="28"  x="360"  width="500"  y="250"  text="拾う"  target="*pick"  ]
@@ -107,24 +110,25 @@ Fu Fu Fu　あややとぅーや[p]
 
 *pick
 [cm]
+[playse storage="動く音.mp3"]
 [layopt layer="1" visible="true"]
 [image layer="1" x="300" y="200" width="800" storage="受験票.png" time="2000"]
 この人の受験票だ。[p]
 [freeimage layer="1"]
 
 #自分
-「あの、受験票落としましたよ。」[p]
+あの、受験票落としましたよ[p]
 
 #4545Cの男
 [chara_mod name="Do" face="斜め笑い"]
-「ほんとだ![r]
-_　ありがとう」[p]
+ほんとだ！[r]
+ありがとう[p]
 
 [chara_mod name="Do" face="斜め通常"]
 
-「君も合格発表を見に来たんだよね？」[p]
+君も合格発表を見に来たんだよね？[p]
 
-「君はどこの学科を受けたの？」[p]
+君はどこの学科を受けたの？[p]
 
 #自分
 なんか身の危険を感じる。[r]
@@ -144,20 +148,20 @@ _　ありがとう」[p]
 [eval exp="f.gakubu = '社会学部'"]
 
 *common_gakubu
-「[emb exp=f.gakubu]を受けたよ」[p]
+[emb exp=f.gakubu]を受けたよ[p]
 
 #4545Cの男
 [chara_mod name="Do" face="default"]
 ;音声付きセリフ
 [playse storage="Do僕と一緒だねスロー.m4a"]
-「そうなんだ！[delay speed=150 ][font bold="true" color="0xF01010"]僕と一緒だね。[resetfont][resetdelay]」[p]
+そうなんだ！[delay speed=150 ][font bold="true" color="0xF01010"]僕と一緒だね。[resetfont][resetdelay][p]
 
 #自分
-「[delay speed=150]そ、[resetdelay]そうなんですね」[p]
+[delay speed=150]そ...[resetdelay]そうなんですね[p]
 
 #4545Cの男
 [chara_mod name="Do" face="ぼーっと"]
-「あっ、僕の名前は前Doよろしく！」[p]
+あっ、僕の名前は前Doよろしく！[p]
 
 *名前入力
 #
@@ -176,11 +180,11 @@ _　ありがとう」[p]
 [endif]
 
 #&f.player_name
-「私の名前は[emb exp=f.player_name]。」[p]
+私の名前は[emb exp=f.player_name][p]
 
 #前Do
 [chara_mod name="Do" face="下笑い"]
-「[font bold="true" color="0xF01010"][emb exp=f.player_name]ちゃんか、よろしく[resetfont]」[p]
+[font bold="true" color="0xF01010"][emb exp=f.player_name]ちゃんか、よろしく[resetfont][p]
 
 
 #&f.player_name
@@ -188,15 +192,17 @@ _　ありがとう」[p]
 
 [chara_mod name="Do" face="斜め通常"]
 
-「お互い、合格してるといいですね」[p]
+お互い、合格してるといいですね[p]
 
 #前Do
-「そうだね」[p]
+そうだね[p]
 
 [chara_hide name="Do"]
 
+[playse storage="移動音.m4a"]
+[stopbgm]
 #
-あなたは恐怖のあまり、逃げるようにこの場を去った。[p]
+あなたは恐怖のあまり、逃げるようにこの場を去った[p]
 
 ;黒の背景
 [bg storage=black.png time=1000]
@@ -208,7 +214,7 @@ _　ありがとう」[p]
 なぜあんなに恐怖を感じていたのだろうか[l][r]
 大学はオンラインで合格を知ったが、素直に喜べない自分がいたのであった。[p]
 
-Chapter 1　：　未知との出会い　クリア
+Chapter 1　：　未知との出会い　クリア[p]
 [cm]
 ;Chapter 2へ
 @jump storage="2.ks"
