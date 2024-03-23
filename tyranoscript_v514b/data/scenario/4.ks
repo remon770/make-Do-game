@@ -263,6 +263,7 @@ Chapter 4　：　友達[p]
 #&f.player_name
 ここのお好み焼き美味しい！[p]
 
+[chara_hide_all]
 [chara_mod name="Do" face="斜め通常"]
 #前Do
 そうだな[p]
@@ -344,4 +345,4 @@ Chapter 4　：　友達[p]
 Chapter 4　：　友達　クリア[p]
 [cm]
 ;Chapter 5へ
-@jump storage="5.ks"
+@jump storage="taikennban.ks"
