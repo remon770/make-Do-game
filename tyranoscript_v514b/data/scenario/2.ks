@@ -75,7 +75,11 @@ Chapter 2　：　再会[p]
 [chara_mod name="Do" face="下笑い"] 
 #見覚えのある4545Cの男
 なに言ってんだyo！前Doだよ[l][r]
-[chara_mod name="Do"] 
+[chara_mod name="Do"]
+
+;キャラクターの明暗設定
+[chara_config brightness=40 talk_focus=brightness]
+
 #前Do
 覚えてない？合格発表の日のこと[p]
 

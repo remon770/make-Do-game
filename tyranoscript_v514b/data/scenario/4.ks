@@ -198,9 +198,10 @@ Chapter 4　：　友達[p]
 #&f.player_name
 そうなんだ[p]
 
-[chara_mod name="Do" face="default"]
+[chara_hide_all]
+[chara_show name="Do" face="default"]
 #前Do
-[playse storage="Doくわっちーさびたん.m4a"]
+[playse storage="Doくわっちーさびたん.m4a" volume=100]
 [delay speed=150]くわっちーさびたん[p][resetdelay]
 
 #&f.player_name
@@ -345,4 +346,4 @@ Chapter 4　：　友達[p]
 Chapter 4　：　友達　クリア[p]
 [cm]
 ;Chapter 5へ
-@jump storage="taikennban.ks"
+@jump storage="taikenban.ks"
